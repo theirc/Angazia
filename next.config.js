@@ -65,6 +65,8 @@ module.exports = withPWA(
           // Set cookie banner styles.
           'cookie-banner-text': '#000',
           'cookie-banner-back': '#FFB500',
+          'link-color': '#0000ee',
+          'link-hover-color': '#0000eea8',
         },
       },
     },
