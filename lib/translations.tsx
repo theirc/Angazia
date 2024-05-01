@@ -4,14 +4,19 @@ import { ArticlePageStrings } from '@ircsignpost/signpost-base/dist/src/article-
 import { CategoryStrings } from '@ircsignpost/signpost-base/dist/src/category-page';
 import { CookieBannerStrings } from '@ircsignpost/signpost-base/dist/src/cookie-banner';
 import { ErrorProps } from '@ircsignpost/signpost-base/dist/src/error';
+import { FooterStrings } from '@ircsignpost/signpost-base/dist/src/footer';
 import { HeaderBannerStrings } from '@ircsignpost/signpost-base/dist/src/header-banner';
 import { HomePageStrings } from '@ircsignpost/signpost-base/dist/src/home-page';
 import { CardsListStrings } from '@ircsignpost/signpost-base/dist/src/home-page-cards-list';
+import { PopupStrings } from '@ircsignpost/signpost-base/dist/src/map';
+import { RecentArticlesStrings } from '@ircsignpost/signpost-base/dist/src/recent-articles';
 import { SearchBarStrings } from '@ircsignpost/signpost-base/dist/src/search-bar';
 import { SearchResultsPageStrings } from '@ircsignpost/signpost-base/dist/src/search-results-page';
 import { SearchResultsStrings } from '@ircsignpost/signpost-base/dist/src/search-results-page-content';
 import { SectionStrings } from '@ircsignpost/signpost-base/dist/src/section-page';
+import { ServiceContentStrings } from '@ircsignpost/signpost-base/dist/src/service-content';
 import { ServiceMapStrings } from '@ircsignpost/signpost-base/dist/src/service-map';
+import { ServicePageStrings } from '@ircsignpost/signpost-base/dist/src/service-page';
 import { ShareButtonStrings } from '@ircsignpost/signpost-base/dist/src/share-button';
 
 import { CustomMenuOverlayStrings } from './menu';
@@ -38,41 +43,95 @@ export const COMMON_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_filter_label',
   'default_most_recent_filter_option',
   'default_most_popular_filter_option',
+  'default_home_disclaimer',
+  // Service Content strings.
+  'default_opening_hours_label',
+  'default_address_label',
+  'default_description_label',
+  'default_banner_email_title',
+  'default_banner_facebook_title',
+  'default_banner_instagram_title',
+  'default_linkedin_label',
+  'default_banner_whatsapp_title',
+  'default_banner_telegram_title',
+  'default_banner_tiktok_title',
+  'default_banner_twitter_title',
+  'default_banner_viber_title',
+  'default_banner_website_title',
+  'default_skype_label',
+  'default_signal_label',
+  'default_banner_telephone_title',
+  'default_linkedin_label',
+  'default_monday_label',
+  'default_tuesday_label',
+  'default_wednesday_label',
+  'default_thursday_label',
+  'default_friday_label',
+  'default_saturday_label',
+  'default_sunday_label',
+  'default_menu_disclaimer_title',
+  'default_opening_hours_label',
+  'default_address_label',
+  'default_description_label',
+  'default_banner_facebook_title',
+  'default_banner_whatsapp_title',
+  'default_skype_label',
+  'default_signal_label',
+  'default_banner_telephone_title',
+  'default_linkedin_label',
+  'default_monday_label',
+  'default_tuesday_label',
+  'default_wednesday_label',
+  'default_thursday_label',
+  'default_friday_label',
+  'default_saturday_label',
+  'default_sunday_label',
 ];
 
 export const HOME_PAGE_DYNAMIC_CONTENT_PLACEHOLDERS = [
   // Header banner and social media strings.
-  /*
-   * TODO: create Dynamic content ID for mission statement.
-  '<website_name>_mission_statement',
-   */
+  'signppost_julisha_mission_statement',
   'default_banner_social_media_title',
   'default_banner_social_media_description',
   'default_banner_facebook_title',
   'default_banner_messenger_title',
   'default_banner_whatsapp_title',
+  'default_banner_whatsappchannel_title',
+  'signpost_julisha_facebook_link',
+  'signpost_julisha_messenger_link',
+  'signpost_julisha_whatsapp_link',
+  'signpost_julisha_whatsappchannel_link',
+
   // Main body strings.
   'default_information_title',
-  'default_information_description',
+  'signpost_julisha_mission_statement',
+  'signpost_julisha_information_description',
   'default_service_map_title',
   'default_service_map_description',
-  'default_service_map_select_region',
-  'default_service_map_all_regions',
-  'default_service_map_select_city',
-  'default_service_map_all_cities',
-  'default_service_map_select_services',
   'default_services_list_count_of',
   'default_services_list_count_services',
   'default_service_map_map_tab',
   'default_service_map_list_tab',
-  'default_service_map_all_services',
-  'DEFAULT_SERVICE_MAP_ALL_REGIONS_OPTION',
-  'DEFAULT_SERVICE_MAP_ALL_CITIES_OPTION',
-  'DEFAULT_SERVICE_MAP_ALL_CATEGORIES_OPTION',
-  'default_service_map_my_location_option',
+  'default_all_services_type_option',
+  'default_all_providers_option',
+  'default_all_populations_option',
+  'default_all_accessibilities_option',
+  'default_distance_away_tooltip',
+  'default_contact_button_label',
+  'default_view_service_label',
+  'default_select_topic',
+  'default_select_subtopic',
+  'default_recent_articles_title',
+  'default_service_type_label',
+  'default_accessibility_label',
+  'default_populations_label',
+  'default_providers_label',
 ];
 
-export const CATEGORY_PLACEHOLDERS = ['default_select_topic'];
+export const CATEGORY_PLACEHOLDERS = [
+  'default_select_topic',
+  'default_select_subtopic',
+];
 
 export const SECTION_PLACEHOLDERS = ['default_select_topic'];
 
@@ -91,25 +150,25 @@ export const ERROR_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_error_home_button_title',
 ];
 
-// TODO: Ask your Product manager to get Social media links.
 export function populateSocialMediaLinks(dynamicContent: {
   [key: string]: string;
 }): SocialMediaLinks {
   return {
     facebookLink: {
       title: dynamicContent['default_banner_facebook_title'],
-      // TODO: create Dynamic content with link to Facebook page
-      href: '', // dynamicContent['<site_prefix>_facebook_link']
-    },
-    whatsappLink: {
-      title: dynamicContent['default_banner_whatsapp_title'],
-      // TODO: create Dynamic content with link to Whatsapp page
-      href: '', // dynamicContent['<site_prefix>_whatsapp_link']
+      href: dynamicContent['signpost_julisha_facebook_link'],
     },
     messengerLink: {
       title: dynamicContent['default_banner_messenger_title'],
-      // TODO: create Dynamic content with link to Messenger page
-      href: '', // dynamicContent['<site_prefix>_messenger_link']
+      href: dynamicContent['signpost_julisha_messenger_link'],
+    },
+    whatsappLink: {
+      title: dynamicContent['default_banner_whatsapp_title'],
+      href: dynamicContent['signpost_julisha_whatsapp_link'],
+    },
+    whatsappChannelLink: {
+      title: dynamicContent['default_banner_whatsappchannel_title'],
+      href: dynamicContent['signpost_julisha_whatsappchannel_link'],
     },
   };
 }
@@ -118,8 +177,7 @@ export function populateHeaderBannerStrings(dynamicContent: {
   [key: string]: string;
 }): HeaderBannerStrings {
   return {
-    // TODO: replace welcomeTitle with website-specific Dynamic content ID.
-    welcomeTitle: 'Welcome text.', // dynamicContent['<site_prefix>_mission_statement'],
+    welcomeTitle: dynamicContent['signpost_julisha_mission_statement'],
     socialMediaTitle: dynamicContent['default_banner_social_media_title'],
     socialMediaDescription:
       dynamicContent['default_banner_social_media_description'],
@@ -142,21 +200,25 @@ export function populateServiceMapStrings(dynamicContent: {
     allPopulationsOption: dynamicContent['default_all_populations_option'],
     allAccessibilitiesOption:
       dynamicContent['default_all_accessibilities_option'],
-    distanceAwayStrings: { informationTooltip: '' },
+    distanceAwayStrings: {
+      informationTooltip: dynamicContent['default_distance_away_tooltip'],
+    },
+    popupStrings: populatePopupStrings(dynamicContent),
+    labelServicesTypes: dynamicContent['default_service_type_label'],
     labelAccessibility: dynamicContent['default_accessibility_label'],
     labelPopulations: dynamicContent['default_populations_label'],
     labelProvider: dynamicContent['default_providers_label'],
-    labelServicesTypes: dynamicContent['default_service_type_label'],
     searchListString: dynamicContent['default_search_hint'],
   };
 }
+
 /** Populate localized categories section strings from Dynamic content. */
 export function populateCategoriesSectionStrings(dynamicContent: {
   [key: string]: string;
 }): CardsListStrings {
   return {
     title: dynamicContent['default_information_title'],
-    description: dynamicContent['default_information_description'],
+    description: dynamicContent['signpost_julisha_information_description'],
   };
 }
 
@@ -229,14 +291,13 @@ export function getSelectTopicLabel(dynamicContent: {
   return dynamicContent['default_select_topic'];
 }
 
-// TODO(annkats): add populateServiceMapStrings() once Service map becomes a Shared component.
-
 export function populateArticleContentStrings(dynamicContent: {
   [key: string]: string;
 }): ArticleContentStrings {
   return {
     textReaderTitle: dynamicContent['default_article_reader_title'],
     shareButtonStrings: getShareButtonStrings(dynamicContent),
+    homeBreadcrumbString: 'Home',
   };
 }
 
@@ -247,6 +308,7 @@ export function populateMenuOverlayStrings(dynamicContent: {
     home: dynamicContent['default_menu_home_title'],
     information: dynamicContent['default_information_title'],
     about: dynamicContent['default_menu_about_title'],
+    disclaimer: dynamicContent['default_menu_disclaimer_title'],
   };
 }
 
@@ -258,6 +320,8 @@ export function populateHomePageStrings(dynamicContent: {
     cookieBannerStrings: populateCookieBannerStrings(dynamicContent),
     serviceMapStrings: populateServiceMapStrings(dynamicContent),
     searchBarStrings: populateSearchBarStrings(dynamicContent),
+    footerStrings: populateFooterStrings(dynamicContent),
+    recentArticlesStrings: populateRecentArticlesStrings(dynamicContent),
   };
 }
 
@@ -276,6 +340,9 @@ export function populateCategoryStrings(dynamicContent: {
     cookieBannerStrings: populateCookieBannerStrings(dynamicContent),
     selectTopicLabel: getSelectTopicLabel(dynamicContent),
     searchBarStrings: populateSearchBarStrings(dynamicContent),
+    footerStrings: populateFooterStrings(dynamicContent),
+    selectSubTopicLabel: dynamicContent['default_select_subtopic'],
+    homeBreadcrumbString: 'Home',
   };
 }
 
@@ -286,6 +353,8 @@ export function populateSectionStrings(dynamicContent: {
     cookieBannerStrings: populateCookieBannerStrings(dynamicContent),
     selectTopicLabel: getSelectTopicLabel(dynamicContent),
     searchBarStrings: populateSearchBarStrings(dynamicContent),
+    footerStrings: populateFooterStrings(dynamicContent),
+    homeBreadcrumbString: 'Home',
   };
 }
 
@@ -296,6 +365,7 @@ export function populateCustom404Strings(dynamicContent: {
     errorStrings: generate404ErrorProps(dynamicContent),
     cookieBannerStrings: populateCookieBannerStrings(dynamicContent),
     searchBarStrings: populateSearchBarStrings(dynamicContent),
+    footerStrings: populateFooterStrings(dynamicContent),
   };
 }
 
@@ -309,6 +379,7 @@ export function populateSearchResultsPageStrings(dynamicContent: {
     allResultsTabString: dynamicContent['default_all_results_tab'],
     informationTabString: dynamicContent['default_information_results_tab'],
     servicesTabString: dynamicContent['default_services_results_tab'],
+    footerStrings: populateFooterStrings(dynamicContent),
   };
 }
 
@@ -321,6 +392,15 @@ export function populateArticlePageStrings(dynamicContent: {
     cookieBannerStrings: populateCookieBannerStrings(dynamicContent),
     articleErrorStrings: generateArticleErrorProps(dynamicContent),
     lastUpdatedLabel: getLastUpdatedLabel(dynamicContent),
+    footerStrings: populateFooterStrings(dynamicContent),
+  };
+}
+
+export function populateFooterStrings(dynamicContent: {
+  [key: string]: string;
+}): FooterStrings {
+  return {
+    disclaimerSummary: dynamicContent['default_home_disclaimer'],
   };
 }
 
@@ -331,5 +411,73 @@ export function populateFilterSelectStrings(dynamicContent: {
     filterLabel: dynamicContent['default_filter_label'],
     mostRecent: dynamicContent['default_most_recent_filter_option'],
     mostPopular: dynamicContent['default_most_popular_filter_option'],
+  };
+}
+
+export function populatePopupStrings(dynamicContent: {
+  [key: string]: string;
+}): PopupStrings {
+  return {
+    contactButtonLabel: dynamicContent['default_contact_button_label'],
+    viewServiceLabel: dynamicContent['default_view_service_label'],
+  };
+}
+
+export function populateServicePageStrings(dynamicContent: {
+  [key: string]: string;
+}): ServicePageStrings {
+  return {
+    serviceContentStrings: populateServiceContentStrings(dynamicContent),
+    searchBarStrings: populateSearchBarStrings(dynamicContent),
+    cookieBannerStrings: populateCookieBannerStrings(dynamicContent),
+    serviceErrorStrings: generateArticleErrorProps(dynamicContent),
+    lastUpdatedLabel: getLastUpdatedLabel(dynamicContent),
+    footerStrings: populateFooterStrings(dynamicContent),
+  };
+}
+
+export function populateRecentArticlesStrings(dynamicContent: {
+  [key: string]: string;
+}): RecentArticlesStrings {
+  return {
+    recentArticlesTitle: dynamicContent['default_recent_articles_title'],
+    lastUpdatedLabel: dynamicContent['default_last_updated'],
+    selectTopicLabel: dynamicContent['default_select_topic'],
+    selectSubTopicLabel: dynamicContent['default_select_subtopic'],
+  };
+}
+
+export function populateServiceContentStrings(dynamicContent: {
+  [key: string]: string;
+}): ServiceContentStrings {
+  return {
+    commonStrings: populateArticleContentStrings(dynamicContent),
+    openingHoursLabelStrings: dynamicContent['default_opening_hours_label'],
+    addressString: dynamicContent['default_address_label'],
+    descriptionString: dynamicContent['default_description_label'],
+    publicContactInformationStrings: {
+      Email: dynamicContent['default_banner_email_title'],
+      Facebook: dynamicContent['default_banner_facebook_title'],
+      Instagram: dynamicContent['default_banner_instagram_title'],
+      LinkedIn: dynamicContent['default_linkedin_label'],
+      Phone: dynamicContent['default_banner_telephone_title'],
+      Signal: dynamicContent['default_signal_label'],
+      Skype: dynamicContent['default_skype_label'],
+      Telegram: dynamicContent['default_banner_telegram_title'],
+      TikTok: dynamicContent['default_banner_tiktok_title'],
+      Twitter: dynamicContent['default_banner_twitter_title'],
+      Viber: dynamicContent['default_banner_viber_title'],
+      Whatsapp: dynamicContent['default_banner_whatsapp_title'],
+      Website: dynamicContent['default_banner_website_title'],
+    },
+    openingHoursStrings: {
+      Monday: dynamicContent['default_monday_label'],
+      Tuesday: dynamicContent['default_tuesday_label'],
+      Wednesday: dynamicContent['default_wednesday_label'],
+      Thursday: dynamicContent['default_thursday_label'],
+      Friday: dynamicContent['default_friday_label'],
+      Saturday: dynamicContent['default_saturday_label'],
+      Sunday: dynamicContent['default_sunday_label'],
+    },
   };
 }
