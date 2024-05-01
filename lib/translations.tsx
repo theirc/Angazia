@@ -166,10 +166,6 @@ export function populateSocialMediaLinks(dynamicContent: {
       title: dynamicContent['default_banner_whatsapp_title'],
       href: dynamicContent['signpost_julisha_whatsapp_link'],
     },
-    whatsappChannelLink: {
-      title: dynamicContent['default_banner_whatsappchannel_title'],
-      href: dynamicContent['signpost_julisha_whatsappchannel_link'],
-    },
   };
 }
 
