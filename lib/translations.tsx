@@ -142,7 +142,6 @@ export function populateServiceMapStrings(dynamicContent: {
     allPopulationsOption: dynamicContent['default_all_populations_option'],
     allAccessibilitiesOption:
       dynamicContent['default_all_accessibilities_option'],
-    popupStrings: populatePopupStrings(dynamicContent),
     distanceAwayStrings: { informationTooltip: '' },
     labelAccessibility: dynamicContent['default_accessibility_label'],
     labelPopulations: dynamicContent['default_populations_label'],
