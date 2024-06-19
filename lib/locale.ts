@@ -13,14 +13,19 @@ export const LOCALES: { [key: string]: Locale } = {
     name: 'English',
     directus: 'en-US',
   },
-  sw: { url: 'sw', direction: 'ltr', name: 'Kiswahili', directus: 'sw-SW' },
+  'sw-sw': {
+    url: 'sw-sw',
+    direction: 'ltr',
+    name: 'Kiswahili',
+    directus: 'sw-SW',
 };
 
 export const LOCALE_CODES_TO_CANONICAL_LOCALE_CODES: { [key: string]: string } =
   {
     en: 'en-us',
     'en-us': 'en-us',
-    sw: 'sw',
+    sw: 'sw-sw',
+    'sw-sw': 'sw-sw',
   };
 
 // Returns the effective locale given locale code.
